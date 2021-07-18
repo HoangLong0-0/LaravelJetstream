@@ -23,6 +23,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    use HasFactory,Notifiable;
+    protected $table = "users";
+    protected  $guarded = "user";
     protected $fillable = [
         'name',
         'email',
@@ -58,4 +61,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function campaigns(){
+      return  $this->belongsToMany(Campaign::class,'campaign_user','user_id','campaign_id');
+    }
 }

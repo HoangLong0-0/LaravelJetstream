@@ -17,6 +17,9 @@ class LoginController extends Controller
 //            dd("success");
             return  redirect()->to("admin");
         }
+        elseif (Auth::guard("user")->attempt($credentials)){
+            return  redirect()->to("user");
+        }
         else{
 //            dd("fail");
             redirect()->back()->withInput();

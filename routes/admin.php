@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\WebController;
@@ -31,12 +30,6 @@ Route::middleware("auth:admin")->group(function (){
     Route::get('/categories/edit/{id}',[CategoryController::class,"edit"]);
     Route::post('/categories/update/{id}',[CategoryController::class,"update"]);
     Route::get('/categories/delete/{id}',[CategoryController::class,"delete"]);
-    //pr
-    Route::get('/products',[ProductController::class,"all"]);
-    Route::get('/products/new',[ProductController::class,"form"]);
-    Route::post('/products/save',[ProductController::class,"save"]);
-    Route::get('/products/edit/{id}',[ProductController::class,"edit"]);
-    Route::post('/products/update/{id}',[ProductController::class,"update"]);
     //in
     Route::get('/informations',[InformationController::class,"all"]);
     Route::get('/informations/new',[InformationController::class,"form"]);

@@ -49,8 +49,8 @@
                                     <td>{{$cat->id}}</td>
                                     <td>{{$cat->name}}</td>
                                     <td>{{$cat->products_count}}</td>
-                                    <td>{{$cat->created_at}}</td>
-                                    <td>{{$cat->updated_at}}</td>
+                                    <td>{{formatDate($cat->created_at)}}</td>
+                                    <td>{{formatDate($cat->updated_at)}}</td>
                                     <td><a href="{{url("admin/categories/edit",["id"=>$cat->id])}}">Edit</a></td>
                                     <td><a href="{{url("admin/categories/delete",["id"=>$cat->id])}}"> Delete</a></td>
                                 </tr>

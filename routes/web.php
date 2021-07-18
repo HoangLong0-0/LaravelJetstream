@@ -13,10 +13,11 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 Route::match(["get","post"],"login",[LoginController::class,"login"])->name("login");
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
 //})->name('dashboard');
+Route::get('/', function () {
+    return view('welcome');
+});
